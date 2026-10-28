@@ -1,0 +1,6 @@
+name: 'Check Docs JS'
+description: 'Comprueba archivos usando Node.js'
+
+runs:
+  using: 'node20'
+  main: 'index.js'
