@@ -1,0 +1,21 @@
+name: Evaluacion de Documentacion
+
+on:
+  workflow_dispatch:
+
+jobs:
+  probar-acciones:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout del repositorio
+        uses: actions/checkout@v4
+
+      - name: Probar Acción 1 (Bash)
+        uses: ./.github/actions/bash-action
+
+      - name: Probar Acción 2 (JavaScript)
+        uses: ./.github/actions/js-action
+
+      - name: Probar Acción 3 (Docker)
+        uses: ./.github/actions/docker-action
