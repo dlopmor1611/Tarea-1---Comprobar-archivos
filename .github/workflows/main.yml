@@ -19,7 +19,7 @@ jobs:
       - name: Comprobar con JavaScript
         id: javascript
         if: always() && steps.checkout.outcome == 'success'
-        uses: ./.github/actions/comprobar-js
+        uses: ./.github/actions/js-action
         with:
           paths: "README.md,CONTRIBUTING.md,CHANGELOG.md,LICENSE,"
         continue-on-error: true
@@ -27,7 +27,7 @@ jobs:
       - name: Comprobar con Docker
         id: docker
         if: always() && steps.checkout.outcome == 'success'
-        uses: ./.github/actions/comprobar-docker
+        uses: ./.github/actions/docker-action
         with:
           paths: "README.md,CONTRIBUTING.md,CHANGELOG.md,LICENSE,"
         continue-on-error: true
@@ -35,7 +35,7 @@ jobs:
       - name: Comprobar con acción compuesta
         id: compuesta
         if: always() && steps.checkout.outcome == 'success'
-        uses: ./.github/actions/comprobar-compuesta
+        uses: ./.github/actions/bash-action
         with:
           paths: "README.md,CONTRIBUTING.md,CHANGELOG.md,LICENSE,"
         continue-on-error: true
